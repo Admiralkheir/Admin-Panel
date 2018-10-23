@@ -1,1 +1,1 @@
-print("merhabalar");
+print("merhabalar")
