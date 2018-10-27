@@ -1,1 +1,1 @@
-# deneme
+# Technologies: C#, ASP.NET , MVC
