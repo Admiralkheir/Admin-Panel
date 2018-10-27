@@ -1,0 +1,49 @@
+﻿@model IEnumerable<bitirmeProje.Models.Servis>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Servisler</h2>
+
+<p>
+    @Html.ActionLink("Yeni Servis", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Koordinat.konumBilgisi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ServisGuzergahIsim)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Koordinat.konumBilgisi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ServisGuzergahIsim)
+        </td>
+        <td>
+            <span>
+                <a href="@Url.Action("Edit","AdminServis",new { id = item.servisID })"><span class="glyphicon glyphicon-pencil"></span></a>
+            </span>
+            <span>
+                <a href="@Url.Action("Delete","AdminServis",new { id = item.servisID })"><span class="glyphicon glyphicon-remove"></span></a>
+            </span>
+            @*<span>
+                <a href="@Url.Action("Details","AdminServis",new { id = item.servisID })"><span class="glyphicon glyphicon-search"></span></a>
+            </span>*@
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.servisID }) |
+        @Html.ActionLink("Details", "Details", new { id=item.servisID }) |
+        @Html.ActionLink("Delete", "Delete", new { id=item.servisID })*@
+        </td>
+    </tr>
+}
+
+</table>

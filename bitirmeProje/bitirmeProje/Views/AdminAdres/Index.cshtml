@@ -1,0 +1,33 @@
+﻿@model IEnumerable<bitirmeProje.Models.Adres>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Adresler</h2>
+<p>
+    @Html.ActionLink("Adres Ekle", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.adresBilgi)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.adresBilgi)
+            </td>
+            <td>
+                <span>
+                    <a href="@Url.Action("Edit","AdminAdres",new { id = item.adresID })"><span class="glyphicon glyphicon-pencil"></span></a>
+                </span>
+            </td>
+        </tr>
+    }
+
+</table>

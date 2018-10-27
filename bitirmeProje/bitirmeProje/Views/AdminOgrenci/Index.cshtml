@@ -1,0 +1,76 @@
+﻿@model IEnumerable<bitirmeProje.Models.Ogrenci>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Öğrenciler</h2>
+
+<p>
+    @Html.ActionLink("Öğrenci Oluştur", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Adres.koordinat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Servis.ServisGuzergahIsim)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Veliler.adSoyad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.adSoyad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sinif)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tcNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.gelmeDurum)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Adres.koordinat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Servis.ServisGuzergahIsim)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Veliler.adSoyad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.adSoyad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sinif)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tcNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.gelmeDurum)
+        </td>
+        <td>
+            <span>
+                <a href="@Url.Action("Edit","AdminOgrenci",new { id = item.ogrenciID })"><span class="glyphicon glyphicon-pencil"></span></a>
+            </span>
+            <span>
+                <a href="@Url.Action("Delete","AdminOgrenci",new { id = item.ogrenciID })"><span class="glyphicon glyphicon-remove"></span></a>
+            </span>
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.ogrenciID }) |
+        @Html.ActionLink("Details", "Details", new { id=item.ogrenciID }) |
+        @Html.ActionLink("Delete", "Delete", new { id=item.ogrenciID })*@
+        </td>
+    </tr>
+}
+
+</table>

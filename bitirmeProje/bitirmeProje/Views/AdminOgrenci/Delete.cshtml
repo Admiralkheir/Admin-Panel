@@ -1,0 +1,81 @@
+﻿@model bitirmeProje.Models.Ogrenci
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Öğrenci Sil</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Ogrenci</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Adres.koordinat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adres.koordinat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Servis.ServisGuzergahIsim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Servis.ServisGuzergahIsim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Veliler.adSoyad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Veliler.adSoyad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.adSoyad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.adSoyad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sinif)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sinif)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tcNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tcNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.gelmeDurum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gelmeDurum)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
