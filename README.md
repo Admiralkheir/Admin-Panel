@@ -1,1 +1,1 @@
-# Technologies: C#, ASP.NET , MVC
+# Technologies: C#, ASP.NET MVC, MVC, MSSQL
